@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pima Diabetes Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Pima Diabetes Prediction</h1>
+    <p class="subtitle">Enter medical details to check diabetes risk</p>
+
+    <form method="POST">
+
+        <!-- Pregnancies -->
+        <label title="Allowed Range: 0 to 20">Pregnancies</label>
+        <input 
+            type="number" 
+            name="Pregnancies" 
+            min="0" max="20"
+            step="1"
+            required
+            value="{{ user_input['Pregnancies'] if user_input else '' }}"
+        >
+        <p class="hint">Allowed range: 0 – 20</p>
+
+        <!-- Glucose -->
+        <label title="Allowed Range: 0 to 300">Glucose</label>
+        <input 
+            type="number" 
+            name="Glucose"
+            min="0" max="300"
+            step="1"
+            required
+            value="{{ user_input['Glucose'] if user_input else '' }}"
+        >
+        <p class="hint">Allowed range: 0 – 300</p>
+
+        <!-- BP -->
+        <label title="Allowed Range: 30 to 200">Blood Pressure</label>
+        <input 
+            type="number" 
+            name="BloodPressure"
+            min="30" max="200"
+            step="1"
+            required
+            value="{{ user_input['BloodPressure'] if user_input else '' }}"
+        >
+        <p class="hint">Allowed range: 30 – 200</p>
+
+        <!-- Skin Thickness -->
+        <label title="Allowed Range: 0 to 99">Skin Thickness</label>
+        <input 
+            type="number" 
+            name="SkinThickness"
+            min="0" max="99"
+            step="1"
+            required
+            value="{{ user_input['SkinThickness'] if user_input else '' }}"
+        >
+        <p class="hint">Allowed range: 0 – 99</p>
+
+        <!-- Insulin -->
+        <label title="Allowed Range: 0 to 900">Insulin</label>
+        <input 
+            type="number" 
+            name="Insulin"
+            min="0" max="900"
+            step="1"
+            required
+            value="{{ user_input['Insulin'] if user_input else '' }}"
+        >
+        <p class="hint">Allowed range: 0 – 900</p>
+
+        <!-- BMI -->
+        <label title="Allowed Range: 10 to 70">BMI</label>
+        <input 
+            type="number" 
+            name="BMI"
+            min="10" max="70"
+            step="0.1"
+            required
+            value="{{ user_input['BMI'] if user_input else '' }}"
+        >
+        <p class="hint">Allowed range: 10 – 70</p>
+
+        <!-- DPF -->
+        <label title="Allowed Range: 0.0 to 3.0">Diabetes Pedigree Function</label>
+        <input 
+            type="number" 
+            name="DiabetesPedigreeFunction"
+            min="0" max="3"
+            step="0.01"
+            required
+            value="{{ user_input['DiabetesPedigreeFunction'] if user_input else '' }}"
+        >
+        <p class="hint">Allowed range: 0.0 – 3.0</p>
+
+        <!-- Age -->
+        <label title="Allowed Range: 10 to 100">Age</label>
+        <input 
+            type="number" 
+            name="Age"
+            min="10" max="100"
+            step="1"
+            required
+            value="{{ user_input['Age'] if user_input else '' }}"
+        >
+        <p class="hint">Allowed range: 10 – 100</p>
+
+
+        <button type="submit" class="btn">Predict</button>
+        <a href="/" class="reset-btn">Reset</a>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>{{ result }}</h3>
+    </div>
+    {% endif %}
+
+    <footer>
+        <p>Model: <b>Pima Diabetes Predictor</b></p>
+        <p>Created by <b>Subodh Kumar Yadav</b></p>
+
+        <div class="links">
+            <a href="https://github.com/subodhkryadav" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/subodh-kumar-yadav-522828293" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
